@@ -4,154 +4,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agriculture E-commerce</title>
+<title>Agriculture E-commerce | Emerge Technology</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7f2;
-  color: #243328;
-}
-header {
-  background: #14532d;
-  color: white;
-  padding: 22px 16px;
-  text-align: center;
-}
-header h1 { margin: 0; font-size: 25px; }
-header p { margin-bottom: 0; }
-nav {
-  background: #fff;
-  padding: 14px;
-  text-align: center;
-}
-nav a {
-  color: #14532d;
-  text-decoration: none;
-  margin: 8px;
-  font-weight: bold;
-}
-.hero {
-  padding: 35px 18px;
-  text-align: center;
-  background: #e2f0df;
-}
-.hero h2 { color: #14532d; }
-.search {
-  width: 90%;
-  max-width: 500px;
-  padding: 14px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-  font-size: 16px;
-}
-button {
-  background: #15803d;
-  color: white;
-  border: 0;
-  padding: 12px 18px;
-  border-radius: 7px;
-  cursor: pointer;
-}
-main { padding: 20px; }
-h2 { color: #14532d; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-  gap: 14px;
-}
-.card {
-  background: white;
-  padding: 20px 10px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 2px 7px #00000012;
-}
-.card h3 { color: #166534; }
-.info {
-  background: white;
-  margin-top: 22px;
-  padding: 20px;
-  border-radius: 10px;
-}
-footer {
-  background: #14532d;
-  color: white;
-  padding: 22px;
-  text-align: center;
-  margin-top: 25px;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7f2;color:#243326}
+header{background:#174d2b;color:white;padding:18px 5%}
+header h1{margin:0;font-size:25px}
+header p{margin:6px 0 0;font-size:13px}
+nav{background:#fff;padding:13px 5%;display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#205b32;text-decoration:none;font-weight:bold;font-size:14px}
+.hero{background:linear-gradient(120deg,#174d2b,#39834a);color:white;padding:45px 6%;text-align:center}
+.hero h2{font-size:30px;margin:0 0 12px}
+.hero p{line-height:1.6}
+.search{display:flex;max-width:550px;margin:22px auto 0}
+.search input{flex:1;min-width:0;padding:14px;border:0;border-radius:7px 0 0 7px;font-size:15px}
+.search button{background:#f3b82f;color:#26351e;border:0;padding:14px 18px;border-radius:0 7px 7px 0;font-weight:bold}
+main{padding:28px 5%;max-width:1100px;margin:auto}
+h2.section{font-size:22px;color:#174d2b}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.category{background:white;padding:18px 10px;text-align:center;border-radius:10px;box-shadow:0 2px 8px #0000000c;font-weight:bold}
+.category span{display:block;font-size:30px;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
+.product{background:white;border-radius:10px;padding:17px;box-shadow:0 2px 8px #0000000c}
+.product .emoji{font-size:42px}
+.product h3{font-size:16px;margin:10px 0 5px}
+.product p{font-size:13px;color:#687468}
+.product button{background:#205b32;color:white;border:0;border-radius:6px;padding:10px;width:100%;font-weight:bold}
+.info{background:white;padding:22px;border-radius:10px;margin-top:28px;line-height:1.7}
+footer{background:#174d2b;color:white;text-align:center;padding:25px 12px;margin-top:35px;font-size:13px}
+.hidden{display:none}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>AGRICULTURE E-COMMERCE</h1>
-  <p>By Emerge Technology Company</p>
-  <p>Connecting Farmers • Suppliers • Buyers</p>
+<h1>🌱 Agriculture E-commerce</h1>
+<p>A product of Emerge Technology Company</p>
 </header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#categories">Categories</a>
-  <a href="#about">About</a>
+<a href="#">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Marketplace</a>
+<a href="#about">About</a>
 </nav>
 
-<section class="hero" id="home">
-  <h2>Your Agricultural Marketplace</h2>
-  <p>Discover agricultural products, connect with sellers and grow your business.</p>
-  <input class="search" id="search" placeholder="Search agricultural products...">
-  <p><button onclick="searchProducts()">Search Products</button></p>
+<section class="hero">
+<h2>Your Agricultural Marketplace</h2>
+<p>Connecting farmers, suppliers, wholesalers, retailers and buyers.</p>
+<div class="search">
+<input id="searchInput" type="search" placeholder="Search agricultural products...">
+<button onclick="searchProducts()">Search</button>
+</div>
 </section>
 
 <main>
-  <section id="categories">
-    <h2>Explore Categories</h2>
-    <div class="grid" id="categoriesGrid">
-      <div class="card"><h3>🌽</h3><strong>Crops & Grains</strong></div>
-      <div class="card"><h3>🐄</h3><strong>Livestock</strong></div>
-      <div class="card"><h3>🌱</h3><strong>Seeds</strong></div>
-      <div class="card"><h3>🧪</h3><strong>Fertilizers</strong></div>
-      <div class="card"><h3>🚜</h3><strong>Farm Equipment</strong></div>
-      <div class="card"><h3>🥬</h3><strong>Fresh Produce</strong></div>
-    </div>
-  </section>
+<h2 class="section" id="categories">Explore Categories</h2>
+<div class="categories">
+<div class="category"><span>🌽</span>Crops</div>
+<div class="category"><span>🐄</span>Livestock</div>
+<div class="category"><span>🌱</span>Seeds</div>
+<div class="category"><span>🧪</span>Fertilizers</div>
+<div class="category"><span>🚜</span>Equipment</div>
+<div class="category"><span>🥬</span>Fresh Produce</div>
+</div>
 
-  <section class="info">
-    <h2>For Farmers and Sellers</h2>
-    <p>List your agricultural products and reach potential customers.</p>
-    <button onclick="alert('Seller registration will be added in the next development stage.')">Become a Seller</button>
-  </section>
+<h2 class="section" id="products">Featured Products</h2>
+<div class="products" id="productList">
 
-  <section class="info">
-    <h2>For Buyers</h2>
-    <p>Discover products and connect with agricultural suppliers.</p>
-    <button onclick="alert('Buyer registration will be added in the next development stage.')">Join as a Buyer</button>
-  </section>
+<div class="product" data-name="maize">
+<div class="emoji">🌽</div>
+<h3>Maize</h3>
+<p>Grains and farm produce</p>
+<button onclick="enquire('Maize')">Enquire</button>
+</div>
 
-  <section class="info" id="about">
-    <h2>Our Vision</h2>
-    <p>To connect agricultural markets across Malawi, Africa and the world through digital commerce.</p>
-  </section>
+<div class="product" data-name="tomatoes">
+<div class="emoji">🍅</div>
+<h3>Tomatoes</h3>
+<p>Fresh farm produce</p>
+<button onclick="enquire('Tomatoes')">Enquire</button>
+</div>
+
+<div class="product" data-name="beans">
+<div class="emoji">🫘</div>
+<h3>Beans</h3>
+<p>Legumes and pulses</p>
+<button onclick="enquire('Beans')">Enquire</button>
+</div>
+
+<div class="product" data-name="fertilizer">
+<div class="emoji">🌿</div>
+<h3>Fertilizer</h3>
+<p>Agricultural inputs</p>
+<button onclick="enquire('Fertilizer')">Enquire</button>
+</div>
+
+<div class="product" data-name="chickens">
+<div class="emoji">🐓</div>
+<h3>Chickens</h3>
+<p>Livestock and poultry</p>
+<button onclick="enquire('Chickens')">Enquire</button>
+</div>
+
+<div class="product" data-name="seeds">
+<div class="emoji">🌱</div>
+<h3>Seeds</h3>
+<p>Crop planting materials</p>
+<button onclick="enquire('Seeds')">Enquire</button>
+</div>
+
+</div>
+
+<p id="noResults" class="hidden">No matching products found.</p>
+
+<section class="info" id="about">
+<h2>About Our Marketplace</h2>
+<p>Agriculture E-commerce is designed to connect agricultural producers and buyers across Malawi, Africa and international markets.</p>
+<p><strong>For farmers:</strong> An opportunity to showcase agricultural products.</p>
+<p><strong>For buyers:</strong> A place to discover agricultural products and suppliers.</p>
+<p><strong>Our philosophy:</strong> Knowledge. Intelligence. Action.</p>
+</section>
 </main>
 
 <footer>
-  <p>Agriculture E-commerce</p>
-  <p>Developed by Emerge Technology Company</p>
-  <p>Knowledge. Intelligence. Action.</p>
+<p>© 2026 Agriculture E-commerce</p>
+<p>Developed by Emerge Technology Company</p>
 </footer>
 
 <script>
-function searchProducts() {
-  const query = document.getElementById('search').value.trim();
-  if (query) {
-    alert('Product search for: ' + query + '. Product listings will be connected in a future update.');
-  } else {
-    alert('Please enter a product name.');
-  }
+function searchProducts(){
+const term=document.getElementById('searchInput').value.toLowerCase().trim();
+const products=document.querySelectorAll('.product');
+let found=0;
+products.forEach(product=>{
+const match=product.dataset.name.includes(term);
+product.style.display=match?'block':'none';
+if(match) found++;
+});
+document.getElementById('noResults').classList.toggle('hidden',found>0);
+}
+document.getElementById('searchInput').addEventListener('input',searchProducts);
+function enquire(product){
+alert('You selected '+product+'. Seller enquiries will be added in a future development stage.');
 }
 </script>
-
 </body>
 </html>
