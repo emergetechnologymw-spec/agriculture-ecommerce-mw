@@ -61,14 +61,13 @@ footer{background:#174d2b;color:white;text-align:center;padding:25px 12px;margin
 <main>
 <h2 class="section" id="categories">Explore Categories</h2>
 <div class="categories">
-<div class="category"><span>🌽</span>Crops</div>
-<div class="category"><span>🐄</span>Livestock</div>
-<div class="category"><span>🌱</span>Seeds</div>
-<div class="category"><span>🧪</span>Fertilizers</div>HTML
-<div class="category"><span>🧴</span>Agrochemicals &amp; Crop Protection</div>
-<div class="category"><span>🚜</span>Equipment</div>
-<div class="category"><span>🥬</span>Fresh Produce</div>
-</div>
+<a class="category" href="#products" onclick="filterCategory('maize')"><span>🌽</span>Crops</a>
+<a class="category" href="#products" onclick="filterCategory('chickens')"><span>🐄</span>Livestock</a>
+<a class="category" href="#products" onclick="filterCategory('seeds')"><span>🌱</span>Seeds</a>
+<a class="category" href="#products" onclick="filterCategory('fertilizer')"><span>🧪</span>Fertilizers</a>
+<a class="category" href="#products" onclick="filterCategory('agrochemicals')"><span>🧴</span>Agrochemicals &amp; Crop Protection</a>
+<a class="category" href="#products" onclick="filterCategory('equipment')"><span>🚜</span>Farm Equipment</a>
+<a class="category" href="#products" onclick="filterCategory('tomatoes')"><span>🥬</span>Fresh Produce</a>
 
 <h2 class="section" id="products">Featured Products</h2>
 <div class="products" id="productList">
@@ -148,6 +147,34 @@ document.getElementById('noResults').classList.toggle('hidden',found>0);
 document.getElementById('searchInput').addEventListener('input',searchProducts);
 function enquire(product){
 alert('You selected '+product+'. Seller enquiries will be added in a future development stage.');
+}function filterCategory(category) {
+  const categoryProducts = {
+    maize: ['maize', 'beans'],
+    chickens: ['chickens'],
+    seeds: ['seeds'],
+    fertilizer: ['fertilizer'],
+    agrochemicals: [],
+    equipment: [],
+    tomatoes: ['tomatoes']
+  };
+
+  const allowed = categoryProducts[category] || [];
+  const products = document.querySelectorAll('.product');
+  let found = 0;
+
+  document.getElementById('searchInput').value = '';
+
+  products.forEach(product => {
+    const match = allowed.includes(product.dataset.name);
+    product.style.display = match ? 'block' : 'none';
+    if (match) found++;
+  });
+
+  const message = document.getElementById('noResults');
+  message.textContent = found
+    ? ''
+    : 'Products in this category will be added soon.';
+  message.classList.toggle('hidden', found > 0);
 }
 </script>
 </body>
